@@ -1,3 +1,5 @@
 ./data/data_norm.npz
 ./.git/objects/pack/pack-15ee1a9c09cd15a91f5c0e9044dfd3086460c295.pack
 ./data/data_norm.npz
+./flask-app/static/uploads
+./flask-app/static/predict

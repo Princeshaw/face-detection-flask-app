@@ -2,6 +2,7 @@ from flask import render_template, request
 from flask import redirect, url_for
 import os
 from PIL import Image
+from app.utils import pipeline_model
 UPLOAD_FOLDER= 'static/uploads'
 
 def base():
@@ -27,5 +28,7 @@ def gender():
         path = os.path.join(UPLOAD_FOLDER,filename)
         f.save(path)
         w = getWidth(path)
+        #get the prediction
+        img = pipeline_model(path,filename ,color="bgr")
         return render_template('gender.html',fileupload=True,image = filename,w=w)
     return render_template('gender.html', fileupload=False)        
